@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Matematik Cikgu Norly</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff9f43;
+            --secondary-color: #54a0ff;
+            --accent-color: #1dd1a1;
+            --dark-blue: #2e86de;
+            --text-dark: #2c3e50;
+            --bg-light: #f0f9ff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: linear-gradient(135deg, #54a0ff 0%, #2e86de 100%);
+            color: white;
+            padding: 80px 20px 120px;
+            text-align: center;
+            position: relative;
+            clip-path: ellipse(150% 100% at 50% 0%);
+        }
+
+        /* Corak geometri halus di latar belakang */
+        header::before {
+            content: "+ − × ÷ % √";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            font-size: 8rem;
+            opacity: 0.1;
+            font-weight: bold;
+            letter-spacing: 20px;
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -60px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Styling */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-bottom: 8px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+        }
+
+        .card.genius { border-color: var(--primary-color); }
+        .card.modul { border-color: var(--accent-color); }
+
+        .card-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon {
+            transform: rotate(0deg) scale(1.1);
+        }
+
+        .genius .card-icon { background: #fff3e0; color: #ff9800; }
+        .modul .card-icon { background: #e8f5e9; color: #4caf50; }
+
+        .card h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .card p {
+            color: #576574;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .genius .button {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .modul .button {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        footer .brand {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.4rem;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        footer p {
+            color: #8395a7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header { padding: 60px 15px 100px; }
+            .container { margin-top: -40px; }
+            .card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portal Matematik Cikgu Norly</h1>
+    <p>Belajar Matematik Jadi Lebih Mudah & Seronok!</p>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <!-- Card 1: Math Genius -->
+        <div class="card genius">
+            <div>
+                <div class="card-icon">
+                    <!-- Ikon Kalkulator/Matematik -->
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="14"></line><line x1="12" y1="14" x2="12" y2="14"></line><line x1="8" y1="14" x2="8" y2="14"></line><line x1="16" y1="18" x2="16" y2="18"></line><line x1="12" y1="18" x2="12" y2="18"></line><line x1="8" y1="18" x2="8" y2="18"></line></svg>
+                </div>
+                <h2>Math Genius</h2>
+                <p>Menjana soalan latih tubi operasi asas secara automatik untuk kegunaan PdPc.</p>
+            </div>
+            <a class="button" href="https://norlyedu.github.io/math-genius/" target="_blank">Jana Latihan 🚀</a>
+        </div>
+
+        <!-- Card 2: Modul Tahun 6 -->
+        <div class="card modul">
+            <div>
+                <div class="card-icon">
+                    <!-- Ikon Buku/Modul -->
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                </div>
+                <h2>Modul Interaktif Matematik Tahun 6</h2>
+                <p>Khas untuk murid Tahun 6. Kuasai penukaran pecahan juta dan perpuluhan juta kepada nombor bulat dan sebaliknya secara interaktif.</p>
+            </div>
+            <a class="button" href="https://norlyedu.github.io/modul-interaktif-juta/" target="_blank">Akses Modul Sekarang 📚</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <span class="brand">Cikgu Norly</span>
+    <p>Inovasi PdP Digital Matematik Sekolah Rendah</p>
+    <p style="margin-top: 15px; font-size: 11px;">© 2026 - Koleksi Inovasi Cikgu Norly</p>
+</footer>
+
+</body>
+</html>
